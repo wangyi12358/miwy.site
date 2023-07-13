@@ -7,8 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --background-color: rgb(38, 42, 51);
-  --text-color: rgb(82, 82, 91);
-  --primary: rgb(222, 96, 18)
+  --text-color: rgb(61, 61, 61);
+  --primary: rgb(101, 163, 13)
 }
 
 @media (prefers-color-scheme: dark) {

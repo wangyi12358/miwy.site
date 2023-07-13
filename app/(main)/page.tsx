@@ -1,60 +1,21 @@
 import React from 'react';
 import Avatar from '@/components/ui/avatar';
-import Github from '@/components/icons/github'
-import Twitter from '@/components/icons/twitter'
-import Telegram from '@/components/icons/telegram'
-import Email from '@/components/icons/email'
 import Posts from '@/components/blog/posts'
 import { FEATURED_POSTS } from '@/common/posts'
-import Bio from './bio'
+import Contacts from '@/components/contacts'
 
-const contacts = [
-  {
-    icon: <Github />,
-    link: 'https://github.com/wangyi12358',
-  },
-  {
-    icon: <Twitter />,
-    link: 'https://twitter.com/Mika00276121'
-  },
-  {
-    icon: <Telegram />,
-    link: 'https://t.me/mika_wang'
-  },
-  {
-    icon: <Email />,
-    link: 'mailto:wangmikayi@gmail.com'
-  }
-]
+
 
 function PersonalInfo() {
-  function renderContacts() {
-    return (
-      <div className="animation-enter-from-bottom flex gap-6">
-        {contacts.map((item, index) => {
-          return (
-            <a
-              className="hover:primary-color text-xl duration-300"
-              target="_blank"
-              key={`${index}`}
-              href={item.link}
-            >
-              {item.icon}
-            </a>
-          )
-        })}
-      </div>
-    )
-  }
 
   return (
     <div className="container-card animation-enter-from-bottom">
       <Avatar className="mt-8" src="https://mika-resource.oss-cn-hangzhou.aliyuncs.com/blog/avatar.jpg"/>
-      <div className="animation-enter-from-bottom text-center mt-4">Mika Wang</div>
-      <div className="mt-4 w-80 text-center">
-        <Bio />
+      <div className="animation-enter-from-bottom text-center mt-2">Mika</div>
+      <div className="mt-6 w-80 text-center animation-enter-from-bottom">
+        Full stack & Developer
       </div>
-      {renderContacts()}
+      <Contacts />
     </div>
   )
 }
