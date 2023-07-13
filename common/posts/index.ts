@@ -5,6 +5,7 @@ export interface Post {
   date: string
   readTime: number // minute
   body?: string
+  img?: string
 }
 
 // all post
@@ -14,6 +15,7 @@ export const ALL_POSTS: Post[] = [
     desc: '什么是逃逸分析？什么是指针逃逸？堆栈是什么？，接下来带大家一起探索。',
     filename: 'go-escape',
     date: '2023-5-27',
+    img: 'go-escape.jpg',
     readTime: 5
   },
   {

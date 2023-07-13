@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --background-color: rgb(38, 42, 51);
   --text-color: rgb(61, 61, 61);
+  --text-second-color: rgb(101, 101, 101);
   --primary: rgb(101, 163, 13)
 }
 
@@ -21,19 +22,13 @@
 
 body {
   color: var(--text-color);
+  font-family: "Figtree", sans-serif, Inter, Inter Placeholder, sans-serif;
   /*background: var(--background-color);*/
   min-height: 100vh;
 }
 
-.layout-container {
-  background: rgb(30, 34, 43);
-}
-
-.layout-background {
-  background-size: 161px;
-  background-repeat: repeat;
-  background-image: url(https://mika-resource.oss-cn-hangzhou.aliyuncs.com/blog/bg.png);
-  opacity: 0.03;
+.second-color {
+  color: var(--text-second-color);
 }
 
 .primary-color {
@@ -92,13 +87,27 @@ body {
   }
 }
 
+.grid-container {
+  @apply px-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4
+}
+
+.grid-item {
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.043) 0 1px 1px -0.75px, rgba(0, 0, 0, 0.082) 0 2px 4px -1.5px, rgba(0, 0, 0, 0.04) 0 0 0 1px;
+  @apply p-6 box-border flex items-center cursor-pointer duration-300
+}
+
+.hover\:grid-item:hover {
+  background-color: rgb(250, 250, 250);
+  box-shadow: rgba(0, 0, 0, 0.035) 0 0.36218px 0.79679px -0.625px, rgba(0, 0, 0, 0.09) 0 3px 6.6px -1.25px, rgba(0, 0, 0, 0.04) 0 0 0 1px;
+}
+
 @layer components {
   .flex-direction {
     @apply flex flex-col
   }
   .title {
-    font-size: xx-large;
-    font-weight: 600;
+    @apply text-xl text-center mb-4
   }
   .subtitle {
     font-size: x-large;

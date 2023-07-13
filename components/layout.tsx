@@ -12,7 +12,7 @@ type Props = {
  */
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="max-w-3xl mx-auto min-h-screen flex-direction">
+    <div className="max-w-4xl mx-auto min-h-screen flex-direction">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

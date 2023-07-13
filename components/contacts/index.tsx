@@ -3,7 +3,6 @@ import Github from '@/components/icons/github';
 import Twitter from '@/components/icons/twitter';
 import Telegram from '@/components/icons/telegram';
 import Email from '@/components/icons/email';
-import './index.css'
 
 const contacts = [
   {
@@ -34,19 +33,24 @@ const contacts = [
  */
 const Contacts: React.FC = () => {
   return (
-    <div>
-      <div>
-        Contacts
-      </div>
-      <div className="grid grid-cols-2 gap-2">
-        {contacts.map((contact, index) => (
-          <div className="contact-item" key={`contact_${index}`}>
-            <span className="text-xl">{contact.icon}</span>
-            <span className="ml-4">{contact.title}</span>
-          </div>
-        ))}
-      </div>
+  <>
+    <div className="title mt-12">
+      联系我
     </div>
+    <div className="grid-container">
+      {contacts.map((contact, index) => (
+        <a
+          target="_blank"
+          href={contact.link}
+          className="h-16 grid-item hover:grid-item"
+          key={`contact_${index}`}
+        >
+          <span className="text-xl">{contact.icon}</span>
+          <span className="ml-4">{contact.title}</span>
+        </a>
+      ))}
+    </div>
+  </>
   );
 }
 
