@@ -1,6 +1,7 @@
 import React from 'react';
 import { ALL_POSTS } from '@/common/posts'
 import Posts from '@/components/blog/posts'
+import { getPosts } from '@/sanity/queries'
 
 const BlogHeader = () => {
   return (
@@ -13,7 +14,9 @@ const BlogHeader = () => {
   )
 }
 
-function Blog() {
+async function Blog() {
+  const data = await getPosts()
+  console.log('data===', data)
   return (
     <>
       <BlogHeader />
