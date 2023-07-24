@@ -2,7 +2,6 @@ import React from 'react';
 import { Post } from '@/common/posts'
 import classnames from 'classnames';
 import { formatDate } from '@/utils/date';
-import { motion } from 'framer-motion'
 
 type Props = {
   posts: Post[]
@@ -23,19 +22,7 @@ const Posts: React.FC<Props> = ({ posts, className }) => {
       {posts.map((post, index) => {
         const href = `/blog/${post.filename}`
         return (
-          <motion.div
-            initial={{
-              translateY: 20,
-              opacity: 0
-            }}
-            animate={{
-              translateY: 0,
-              opacity: 1,
-              transition: {
-                duration: 0.3,
-                delay: index * 0.3
-              }
-            }}
+          <div
             className="grid-item hover:grid-item"
             key={`post_${index}`}
           >
@@ -48,7 +35,7 @@ const Posts: React.FC<Props> = ({ posts, className }) => {
                 <span>{post.readTime}分钟阅读</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         )
       })}
     </div>
